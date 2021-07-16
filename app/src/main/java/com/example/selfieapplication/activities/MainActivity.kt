@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.selfieapplication.R
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     imageList.add(Image(uri.toString()))
                 }.addOnCompleteListener{
                     main_rv_image_list.adapter = ImageAdapter(this, imageList)
-                    main_rv_image_list.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+                    main_rv_image_list.layoutManager = GridLayoutManager(this, 2)
                 }
             }
         }
